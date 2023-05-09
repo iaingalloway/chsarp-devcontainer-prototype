@@ -1,0 +1,11 @@
+{
+  "name": "C# (.NET 7)",
+  "dockerFile": "Dockerfile",
+  "runArgs": [
+    "--name", "csharp-devcontainer-prototype",
+    "--network=host"],
+  "mounts": [
+    "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind",
+    "source=${env:HOME}/.kube,target=/root/.kube,type=bind"
+  ]
+}
