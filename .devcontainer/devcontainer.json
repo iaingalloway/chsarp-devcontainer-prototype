@@ -3,7 +3,11 @@
   "customizations":
   {
     "vscode": {
-      "extensions": ["ms-dotnettools.csharp", "EditorConfig.EditorConfig"]
+      "extensions": [
+        "ms-dotnettools.csharp",
+        "ms-kubernetes-tools.vscode-kubernetes-tools",
+        "DavidAnson.vscode-markdownlint",
+        "EditorConfig.EditorConfig"]
     }
   },
   "dockerFile": "Dockerfile",
