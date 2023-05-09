@@ -24,6 +24,8 @@ jobs:
     steps:
       - name: Publish Container
         uses: iaingalloway/dotnet-devcontainer-prototype/.github/actions/publish-container@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           dockerfile: ./src/WorldService/Dockerfile
           image-name: world-service
