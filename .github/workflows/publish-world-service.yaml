@@ -1,0 +1,29 @@
+name: Publish WorldService
+
+on:
+  push:
+    branches: [ "main" ]
+    tags: [ 'v*.*.*' ]
+    paths:
+      - 'src/ClassLibrary/**'
+      - 'src/WorldService/**'
+  pull_request:
+    branches: [ "main" ]
+    paths:
+      - 'src/ClassLibrary/**'
+      - 'src/WorldService/**'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Publish Container
+        uses: iaingalloway/dotnet-devcontainer-prototype/.github/actions/publish-container@main
+        with:
+          dockerfile: ./src/WorldService/Dockerfile
+          image-name: world-service
