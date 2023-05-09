@@ -1,6 +1,6 @@
-# C# (.NET 7) Development Container Prototype
+# .NET 7 Development Container Prototype
 
-This repository contains a prototype for a Visual Studio Code dev container setup for a C# (.NET 7) project. The devcontainer mounts the host's docker port, and provides the kind binary to support development with a local Kubernetes cluster.
+This repository contains a prototype for a Visual Studio Code dev container setup for a .NET 7 project. The devcontainer mounts the host's docker port, and provides the kind binary to support development with a local Kubernetes cluster.
 
 ## Prerequisites
 
