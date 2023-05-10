@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: world-service
+  annotations:
+    argocd-image-updater.argoproj.io/interval: 5m
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: world-service
+  template:
+    metadata:
+      labels:
+        app: world-service
+    spec:
+      containers:
+      - image: ghcr.io/iaingalloway/dotnet-devcontainer-prototype/world-service{{ if .Values.worldService.image.tag }}:{{ .Values.worldService.image.tag }}{{end}}{{ if .Values.worldService.image.digest }}@{{ .Values.worldService.image.digest }}{{ end }}
+        name: world-service
+        ports:
+        - name: http
+          containerPort: 80

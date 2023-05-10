@@ -1,0 +1,7 @@
+helloService:
+  image:
+    tag: "main"
+
+worldService:
+  image:
+    tag: "main"

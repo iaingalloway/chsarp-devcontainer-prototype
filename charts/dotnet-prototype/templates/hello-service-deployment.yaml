@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-service
+  annotations:
+    argocd-image-updater.argoproj.io/interval: 5m
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: hello-service
+  template:
+    metadata:
+      labels:
+        app: hello-service
+    spec:
+      containers:
+      - image: ghcr.io/iaingalloway/dotnet-devcontainer-prototype/hello-service{{ if .Values.helloService.image.tag }}:{{ .Values.helloService.image.tag }}{{end}}{{ if .Values.helloService.image.digest }}@{{ .Values.helloService.image.digest }}{{ end }}
+        name: hello-service
+        ports:
+        - name: http
+          containerPort: 80
