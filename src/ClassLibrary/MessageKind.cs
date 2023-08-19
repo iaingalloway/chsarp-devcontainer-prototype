@@ -1,3 +1,7 @@
 namespace ClassLibrary;
 
-public enum MessageKind { Hello, World }
+public enum MessageKind
+{
+  Hello,
+  World,
+}

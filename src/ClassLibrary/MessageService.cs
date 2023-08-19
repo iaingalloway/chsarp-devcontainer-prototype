@@ -1,21 +1,13 @@
-﻿namespace ClassLibrary;
+namespace ClassLibrary;
 
-public class MessageService
+public static class MessageService
 {
-  public string GetMessage(MessageKind kind, bool createException)
-  {
-    if(createException)
-    {
-      throw new InvalidOperationException();
-    }
+  public static string GetMessage(MessageKind kind, bool createException) => createException ? throw new InvalidOperationException() : GetMessage(kind);
 
-    return GetMessage(kind);
-  }
-
-  public string GetMessage(MessageKind kind) => kind switch
+  public static string GetMessage(MessageKind kind) => kind switch
   {
     MessageKind.Hello => "Hello",
     MessageKind.World => "world!",
-    _ => throw new InvalidOperationException()
+    _ => throw new InvalidOperationException(),
   };
 }
