@@ -9,6 +9,7 @@
         "ms-kubernetes-tools.vscode-kubernetes-tools",
         "DavidAnson.vscode-markdownlint",
         "EditorConfig.EditorConfig",
+        "redhat.vscode-xml",
         "redhat.vscode-yaml"]
     }
   },
