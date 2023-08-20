@@ -13,4 +13,11 @@ COPY --from=kubectl /opt/bitnami/kubectl/bin/kubectl /usr/local/bin/kubectl
 COPY --from=docker-cli /usr/local/bin/docker /usr/local/bin/
 COPY --from=helm /usr/bin/helm /usr/local/bin/helm
 
+RUN curl -sS https://starship.rs/install.sh | sh -s -- --yes
+
+WORKDIR /home/vscode
+RUN mkdir -p repos
+RUN git clone https://github.com/iaingalloway/env.git repos/env
+RUN /bin/su -c "cd /home/vscode/repos/env && ./setup-env.sh" - vscode
+
 WORKDIR /workspaces
