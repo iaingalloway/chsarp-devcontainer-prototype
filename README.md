@@ -14,3 +14,11 @@ This repository contains a prototype for a Visual Studio Code dev container setu
 3. When prompted, open the repository in a development container
 
 This setup allows development and testing C# (.NET 7) applications in a containerised environment, while also providing the ability to interact with Docker and Kubernetes on the host machine for convenience.
+
+## Useful snippets
+
+To get a terminal inside the container:
+
+```bash
+docker exec -it --user vscode dotnet-devcontainer-prototype bash
+```
