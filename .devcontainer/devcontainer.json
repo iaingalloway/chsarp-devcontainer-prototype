@@ -1,7 +1,6 @@
 {
   "name": "C# (.NET 7)",
-  "customizations":
-  {
+  "customizations": {
     "vscode": {
       "extensions": [
         "ms-azuretools.vscode-docker",
@@ -10,15 +9,26 @@
         "DavidAnson.vscode-markdownlint",
         "EditorConfig.EditorConfig",
         "redhat.vscode-xml",
-        "redhat.vscode-yaml"]
+        "redhat.vscode-yaml"
+      ]
     }
   },
   "dockerFile": "Dockerfile",
   "mounts": [
-    "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind",
-    "source=${env:HOME}/.kube,target=/root/.kube,type=bind"
+    {
+      "source": "/var/run/docker.sock",
+      "target": "/var/run/docker.sock",
+      "type": "bind"
+    },
+    {
+      "source": "${env:HOME}/.kube",
+      "target": "/root/.kube",
+      "type": "bind"
+    }
   ],
   "runArgs": [
-    "--name", "dotnet-devcontainer-prototype",
-    "--network=host"]
+    "--name",
+    "dotnet-devcontainer-prototype",
+    "--network=host"
+  ]
 }
