@@ -13,4 +13,4 @@ COPY --from=kubectl /opt/bitnami/kubectl/bin/kubectl /usr/local/bin/kubectl
 COPY --from=docker-cli /usr/local/bin/docker /usr/local/bin/
 COPY --from=helm /usr/bin/helm /usr/local/bin/helm
 
-WORKDIR /app
+WORKDIR /workspaces
