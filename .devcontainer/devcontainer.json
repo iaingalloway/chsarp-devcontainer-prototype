@@ -22,7 +22,12 @@
     },
     {
       "source": "${env:HOME}/.kube",
-      "target": "/root/.kube",
+      "target": "/home/vscode/.kube",
+      "type": "bind"
+    },
+    {
+      "source": "${env:HOME}/.ssh",
+      "target": "/home/vscode/.ssh",
       "type": "bind"
     }
   ],
