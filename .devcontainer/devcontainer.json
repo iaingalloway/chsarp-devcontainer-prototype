@@ -1,5 +1,5 @@
 {
-  "name": "C# (.NET 7)",
+  "name": "dotnet-devcontainer-prototype",
   "customizations": {
     "vscode": {
       "extensions": [
